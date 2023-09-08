@@ -1,4 +1,3 @@
-# highme.no
 <img src="/images/highme-banner.png">
 
 Simpel landing page for my in-game life.<br>
