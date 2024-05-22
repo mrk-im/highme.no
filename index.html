@@ -23,7 +23,7 @@
 	<meta name="MobileOptimized" content="320">
 	
 	<!-- Refresh page after xx seconds -->
-	<meta http-equiv="refresh" content="7200;URL=index.html">
+	<meta http-equiv="refresh" content="60;URL=index.html">
 
 	<!-- Primary Meta Tags -->
   	<title>HighMe</title>
@@ -66,14 +66,8 @@
 					<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 					<script>
 					$(document).ready(function() {
-    						var player;
-   						$('#youtube-player').on('load', function() {
-        						player = new YT.Player('youtube-player');
-       							player.addEventListener('onStateChange', function(event) {
-            							if (event.data == YT.PlayerState.ENDED) {
-                							player.playVideo();
-            							}
-        						});
+    						$('#youtube-player').on('ended', function() {
+        						this.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
     						});
 					});
 					</script>
