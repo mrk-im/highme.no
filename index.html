@@ -65,10 +65,10 @@
       					<iframe id="youtube-player" src="https://www.youtube.com/embed/w8Kp2rGWuwI?controls=0&mute=1&showinfo=0&rel=0&autoplay=1&loop=1" frameborder="0" allowfullscreen></iframe>
 					<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 					<script>
-						$(document).ready(function() {
-    							$('#youtube-player').on('ended', function() {
-       							 	this.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-   									 });
+					$(document).ready(function() {
+    						$('#youtube-player').on('ended', function() {
+       							 this.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+   						});
 					});
 </script>
     				</div>
